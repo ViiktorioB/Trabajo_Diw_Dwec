@@ -7,4 +7,5 @@ node_modules/
 # Ignorar archivos log
 *.log
 
-store
+.DS_Store
+
