@@ -1,0 +1,9 @@
+# Ignorar archivos temporales generados por el sistema
+*~
+
+# Ignorar el directorio "node_modules" y su contenido
+node_modules/
+
+# Ignorar archivos log
+*.log
+

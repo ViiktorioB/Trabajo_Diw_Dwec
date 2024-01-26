@@ -1,0 +1,42 @@
+{
+  "name": "kittens_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "colored-progress-bar-webpack-plugin": "^1.2.4",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
+    "postcss-loader": "^7.3.4",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-manifest-plugin": "^5.0.0"
+  },
+  "dependencies": {
+    "@material/button": "^14.0.0",
+    "@material/layout-grid": "^14.0.0",
+    "@material/ripple": "^14.0.0",
+    "@material/tab-bar": "^14.0.0",
+    "@material/top-app-bar": "^14.0.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "lodash": "^4.17.21",
+    "material-components-web": "^14.0.0"
+  }
+}
