@@ -16,7 +16,7 @@ module.exports = {
     port: 8080,
     hot: true,
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+  plugins: [new HtmlWebpackPlugin({ template: './src/manu.html' })],
   module: {
     rules: [
         {
