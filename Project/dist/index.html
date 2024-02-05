@@ -37,6 +37,14 @@
     .navbar{
         min-height: 15vh;
     }
+
+    .iniciosession{
+        margin-left: 20px;
+    }
+
+ .navbar-nav .nav-item:hover .nav-link {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
 </style>
 </head>
 
@@ -53,29 +61,28 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link text-black" href="#">Reserva</a>
+                                <a class="nav-link text-black fs-6" href="#">Reserva</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">Contacto </a>
+                                <a class="nav-link text-black fs-6" href="#">Contacto </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" href="#" role="button"
+                                <a class="nav-link dropdown-toggle text-black fs-6" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Pistas
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Dobles</a></li>
-                                    <li><a class="dropdown-item" href="#">Individuales</a></li>
-                                    <li><a class="dropdown-item" href="#">Cubiertas</a></li>
+                                    <li><a class="dropdown-item fs-6" href="#">Dobles</a></li>
+                                    <li><a class="dropdown-item fs-6" href="#">Individuales</a></li>
+                                    <li><a class="dropdown-item fs-6" href="#">Cubiertas</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <div class="d-flex align-items-center m-20">
-                    <a href="/login.html" class="nav-link m-2">Iniciar Sesión</a>
-                    |
-                    <a href="#" class="nav-link m-2">Registro</a>
+                <div class="iniciosession d-flex align-items-center">
+                    <a href="/login.html" class="btn btn-light mr-10 fs-6 col-sm-10 border border-primary">Iniciar Sesión </a>
+                    <a href="#" class="btn btn-dark fs-6 col-sm-8 m-2">Registro</a>
                 </div>
             </div>
         </header>
