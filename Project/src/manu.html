@@ -19,7 +19,7 @@
         .header {
             background: url('./wp4283319.jpg') no-repeat center;
             background-size: cover;
-            min-height: 90vh;
+            min-height: 70vh;
             color: black;
         }
 
@@ -37,6 +37,11 @@
 
         .navbar-nav .nav-item:hover .nav-link {
             border-bottom: 2px solid rgb(0, 0, 0);
+        }
+
+        .card-img-top {
+            height: 250px; 
+            object-fit: cover; 
         }
     </style>
 </head>
@@ -178,8 +183,44 @@
         <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
 
-    <div class="container">
-        <h1>siii</h1>
+     <!-- Tarjetas -->
+     <div class="card-group d-flex justify-content-around mt-5 h-100">
+        <div class="col-sm-3 h-100">
+            <div class="card">
+                <img src="./pista1.jpeg" class="card-img-top" alt="">
+                <div class="card-img-overlay">
+                    <h6>Torrada San Sebastian</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text mt-2">Calle</p>
+                    <button class="btn bg-secondary text-white">Reservar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 h-100">
+            <div class="card">
+                <img src="./pista2.jpeg" class="card-img-top" alt="">
+                <div class="card-img-overlay">
+                    <h6>Torrada San Sebastian</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text mt-2">Calle</p>
+                    <button class="btn bg-secondary text-white">Reservar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 h-100">
+            <div class="card">
+                <img src="./pista3.jpeg" class="card-img-top" alt="">
+                <div class="card-img-overlay">
+                    <h6>Torrada San Sebastian</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text mt-2">Calle</p>
+                    <button class="btn bg-secondary text-white">Reservar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
