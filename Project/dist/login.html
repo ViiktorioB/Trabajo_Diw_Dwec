@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+<script defer src="main.js"></script></head>
+<body>
+    <style>
+        .bg {
+            background-image: url('padel.png');
+            background-position: center;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col bg">
+
+            </div>
+            <div class="col">
+                <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+
+                <!-- Form -->
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" name="email" placeholder="viktorioputero@gmail.com" aria-describedby="emailHelpId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password" placeholder="***********" aria-describedby="emailHelpId">
+                    </div>
+                    <div class="mb-4 form-check">
+                            <input class="form-check-input" type="checkbox" name="connected"/>
+                            <label class="form-check-label" for="connected"> Mantenerme conectado </label>
+                    </div>
+
+                    <div class="d-grid"> <!--así me ocupa todo el ancho del form-->
+                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    </div>
+
+                    <div class="my-3">
+                        <span>¿No tienes cuenta?</span> <a href="register.html">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

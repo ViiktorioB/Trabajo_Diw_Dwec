@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container p-5 shadow col-md-4 bg-light">
+        <div class="row align-items-stretch">
+                <h2 class="fw-bold text-center py-3">Inicia sesión</h2>
+
+                <!-- Form -->
+                <form action="#">
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Correo electrónico</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                      </div>
+                    <div class="mb-4 form-check">
+                            <input class="form-check-input" type="checkbox" name="connected"/>
+                            <label class="form-check-label" for="connected"> Mantenerme conectado </label>
+                    </div>
+
+                    <div class="d-grid"> <!--así me ocupa todo el ancho del form-->
+                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    </div>
+
+                    <div class="my-3">
+                        <span>¿No tienes cuenta?</span> <a href="register.html">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bg {
+            background-image: url('padel.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</body>
+</html>
