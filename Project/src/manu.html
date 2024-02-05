@@ -75,12 +75,47 @@
                         </ul>
                     </div>
                 </nav>
+                <!--NO PUTO TOQUES-->
             <div class="iniciosession d-flex align-items-center">
                 <a href="/login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary">Iniciar Sesión
                 </a>
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                          <h5 class="modal-title" id="loginModalLabel">Inicia sesión</h5>
+                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Formulario -->
+                          <form action="#" class="p-4">
+                            <div class="form-floating mb-3">
+                              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                              <label for="floatingInput">Correo electrónico</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                              <label for="floatingPassword">Contraseña</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                              <input class="form-check-input" type="checkbox" name="connected" id="connected">
+                              <label class="form-check-label" for="connected"> Mantenerme conectado </label>
+                            </div>
+                            <div class="d-grid">
+                              <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                            </div>
+                            <div class="my-3 text-center">
+                              <span>¿No tienes cuenta?</span> <a href="register.html">Regístrate</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <a href="#" class="btn btn-dark fs-6 col-sm-7 m-2">Registro</a>
             </div>
         </div>
+        <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
 
     <div class="container">
