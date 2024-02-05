@@ -75,17 +75,107 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="iniciosession d-flex align-items-center">
-                    <a href="/login.html" class="btn btn-light mr-10 fs-6 col-sm-10 border border-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión </a>
-                    <a href="#" class="btn btn-dark fs-6 col-sm-8 m-2">Registro</a>
-                </div>
-            </nav>
+                <!--NO PUTO TOQUES-->
             <div class="iniciosession d-flex align-items-center">
-                <a href="/login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary">Iniciar Sesión
+                <a id="loginModal" href="login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión
                 </a>
-                <a href="#" class="btn btn-dark fs-6 col-sm-7 m-2">Registro</a>
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                          <h5 class="modal-title" id="loginModalLabel">Inicia sesión</h5>
+                          <button id="closeModal" type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Formulario -->
+                          <form action="#" class="p-4">
+                            <div class="form-floating mb-3">
+                              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                              <label for="floatingInput">Correo electrónico</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                              <label for="floatingPassword">Contraseña</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                              <input class="form-check-input" type="checkbox" name="connected" id="connected">
+                              <label class="form-check-label" for="connected"> Mantenerme conectado </label>
+                            </div>
+                            <div class="d-grid">
+                              <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                            </div>
+                            <div class="my-3 text-center">
+                              <span>¿No tienes cuenta?</span> <a href="#" id="nocuenta">Regístrate</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <a href="#" id="registroBoton" class="btn btn-dark fs-6 col-sm-7 m-2"  data-bs-toggle="modal" data-bs-target="#registerModal">Registro</a>
+                <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                          <h5 class="modal-title" id="registerModalLabel">Registro</h5>
+                          <button id="closeRegister" type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Formulario -->
+                          
+                          <form action="#" class="p-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                <label for="floatingInput">Nombre</label>
+                              </div>
+                            <div class="form-floating mb-3">
+                              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                              <label for="floatingInput">Correo electrónico</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                              <label for="floatingPassword">Contraseña</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-control" id="floatingSelect">
+                                    <option value="principiante">Principiante</option>
+                                    <option value="medio">Medio</option>
+                                    <option value="avanzado">Avanzado</option>
+                                </select>
+                                <label for="floatingSelect">Nivel de pádel</label>
+                            </div>
+                            
+                            <div class="d-grid">
+                              <button type="submit" class="btn btn-info">Registrarme</button>
+                            </div>
+                            <div class="my-3 text-center">
+                              <span>¿Ya estás registrado?</span> <a id="goLogin" href="#">Iniciar sesión</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
+
+        <script>
+            const noAccount = document.getElementById('nocuenta');
+            const closeModal = document.getElementById('closeModal')
+            const registroBoton = document.getElementById('registroBoton')
+            const goLogin = document.getElementById('goLogin')
+            const loginModal = document.getElementById('loginModal')
+            const closeRegister = document.getElementById('closeRegister')
+            noAccount.addEventListener('click', () => {
+                closeModal.click();
+                registroBoton.click();
+            })
+            goLogin.addEventListener('click', () => {
+                closeRegister.click()
+                loginModal.click();
+            })
+        </script>
+        <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
 
     <div class="container">
