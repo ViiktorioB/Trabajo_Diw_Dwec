@@ -23,7 +23,7 @@
         }
 
         .navbar {
-            min-height: 15vh;
+            min-height: 11vh;
         }
 
         .iniciosession {
@@ -182,10 +182,48 @@
         </script>
         <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
-
-    <div class="fondo">
-
+    <div class="fondo align-items-center justify-content-center">
+    <div class="container text-center py-5">
+        <h1 class="text-white fw-bold">Vive la mejor experiencia de pádel</h1>
+        <h3 class="text-white fw-bold">Busca centros y horarios disponibles</h3>
     </div>
+    
+    <div class="container col-md-6 mt-5">
+        <form class="row g-4 bg-white py-4 rounded shadow">
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="input1" name="input1" required>
+                        <option value="" disabled selected>Selecciona un centro</option>
+                        <option value="Palma Padel">Palma Padel</option>
+                        <option value="Duet Sports Portitxol">Duet Sports Portitxol</option>
+                        <option value="Padel factory">Padel factory</option>
+                    </select>
+                    <label for="input1">Centro</label>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="input2" placeholder="Campo 2" required>
+                    <label for="input2">Fecha</label>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input type="time" step="1800" class="form-control" id="input3" placeholder="Campo 3" required>
+                    <label for="input3">Hora</label>
+                </div>
+            </div>
+    
+            <div class="col-md-12 text-center mt-3">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>    
      <!-- Tarjetas -->
      <div class="card-group d-flex justify-content-around mt-5 h-100">
         <div class="col-sm-3 h-100">
