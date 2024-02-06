@@ -18,7 +18,9 @@ module.exports = {
   },
   plugins: 
   [new HtmlWebpackPlugin({ template: "./src/manu.html", filename: 'index.html' }),
-  new HtmlWebpackPlugin({ template: "./src/login.html", filename: 'login.html' })
+  new HtmlWebpackPlugin({ template: "./src/login.html", filename: 'login.html' }),
+  new HtmlWebpackPlugin({ template: "./src/perfil.html", filename: 'perfil.html' })
+
 ],
   module: {
     rules: [
