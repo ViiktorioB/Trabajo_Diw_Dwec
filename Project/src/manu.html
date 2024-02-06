@@ -54,6 +54,9 @@
             object-fit: cover;
         }
 
+        .carousel{
+            min-height: 70vh;
+        }
         .imgCarusel {
             height: 400px;
             width: 350px;
@@ -317,6 +320,52 @@
             </form>
         </div>
     </div>
+    
+    <div class="container col-md-6 mt-5">
+        <form class="row g-4 bg-white py-4 rounded shadow">
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="input1" name="input1" required>
+                        <option value="" disabled selected>Selecciona un centro</option>
+                        <option value="Palma Padel">Palma Padel</option>
+                        <option value="Duet Sports Portitxol">Duet Sports Portitxol</option>
+                        <option value="Padel factory">Padel factory</option>
+                    </select>
+                    <label for="input1">Centro</label>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="input2" placeholder="Campo 2" required>
+                    <label for="input2">Fecha</label>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="form-floating mb-3">
+                    <input type="time" step="1800" class="form-control" id="input3" placeholder="Campo 3" required>
+                    <label for="input3">Hora</label>
+                </div>
+            </div>
+    
+            <div class="col-md-12 text-center mt-3">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+     <!-- Tarjetas -->
+     <div class="card-group d-flex justify-content-around mt-5 h-100">
+
+    </div>    
+   
+ 
+    <h2 class="d-flex color-primary mt-2">Estos son los centros de padel cercanos !!</h2>
+   
+
 
     <!-- Tarjetas -->
 
@@ -353,6 +402,8 @@
                     <h3>Palma Padel</h3>
                 </div>
                 <div class="card-body shadow-lg">
+                    <p class="card-text mt-2">Carrer de Castellà la Manxa 6, 07011 </p>
+                    <button class="btn btn-outline-secondary text-secondary">Reservar</button>
                     <p class="card-text mt-2">Carrer de Castellà la Manxa 6, 07011</p>
                     <button class="btn bg-secondary text-white">Reservar</button>
                 </div>
@@ -360,6 +411,8 @@
         </div>
     </div>
 
+   
+    <h2 class="d-flex color-primary mt-3">Un poco de nuestra nueva tienda online</h2>
 
     <h2 class="titulos d-flex color-primary position-relative">
         Un poco de nuestra nueva tienda online
