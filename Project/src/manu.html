@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+  </head>
 
-    <style>
+
+<style>
+    .header {
+        background: url('./wp4283319.jpg') no-repeat center;
+        background-size: cover;
+        min-height: 90vh;
+        color: black;
+    }
     
-        .logo {
-            height: 10vh;
-        }
-
-        .header .navbar {
-            background-color: transparent !important;
-        }
-
         .navbar {
             min-height: 12vh;
         }
@@ -83,35 +89,33 @@
     </style>
 </head>
 
-<body class="bg-danger">
-    <header class="header col-sm-12 bg-white">
-        <div class="container d-flex justify-content-end align-items-center">
-            <div class="container d-flex col-sm-7 justify-content-start">
-                <img src="./logoprueba.png" alt="logo" class="logo">
-            </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
+<body>
+
+    <body>
+        <header class="header">
+
+            <div class="container d-flex justify-content-end align-items-center">
+                <div class="container d-flex col-sm-8 justify-content-start">
+                    <h1 class="color-primary">PADEL</h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link text-black fs-6" href="#">Reserva</a>
+                                <a class="nav-link text-black" href="#">Reserva</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-black fs-6" href="#">Contacto </a>
+                                <a class="nav-link text-black" href="#">Contacto </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black fs-6" href="#" role="button"
+                                <a class="nav-link dropdown-toggle text-black" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Pistas
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item fs-6" href="#">Dobles</a></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Individuales</a></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Cubiertas</a></li>
+                                    <li><a class="dropdown-item" href="#">Dobles</a></li>
+                                    <li><a class="dropdown-item" href="#">Individuales</a></li>
+                                    <li><a class="dropdown-item" href="#">Cubiertas</a></li>
                                 </ul>
                             </li>
                         </ul>
