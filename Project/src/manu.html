@@ -132,12 +132,12 @@
                                 <!-- Formulario -->
                                 <form action="#" class="p-4">
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="floatingInput"
+                                        <input type="email" class="form-control" id="emailLogin"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Correo electrónico</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" id="floatingPassword"
+                                        <input type="password" class="form-control" id="emailPassword"
                                             placeholder="Contraseña">
                                         <label for="floatingPassword">Contraseña</label>
                                     </div>
@@ -146,7 +146,7 @@
                                         <label class="form-check-label" for="connected"> Mantenerme conectado </label>
                                     </div>
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                                        <button type="submit" onclick="saveDataLogin()" class="btn btn-success">Iniciar sesión</button>
                                     </div>
                                     <div class="my-3 text-center">
                                         <span>¿No tienes cuenta?</span> <a href="#" id="nocuenta">Regístrate</a>
@@ -172,21 +172,21 @@
 
                                 <form action="#" class="p-4">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                                         <label for="floatingInput">Nombre</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="floatingInput"
+                                        <input type="email" class="form-control" id="email"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Correo electrónico</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" id="floatingPassword"
+                                        <input type="password" class="form-control" id="password"
                                             placeholder="Contraseña">
                                         <label for="floatingPassword">Contraseña</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <select class="form-control" id="floatingSelect">
+                                        <select class="form-control" id="level">
                                             <option value="principiante">Principiante</option>
                                             <option value="medio">Medio</option>
                                             <option value="avanzado">Avanzado</option>
@@ -195,7 +195,7 @@
                                     </div>
 
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-info">Registrarme</button>
+                                        <button type="submit" onclick="saveDataRegister()" class="btn btn-info">Registrarme</button>
                                     </div>
                                     <div class="my-3 text-center">
                                         <span>¿Ya estás registrado?</span> <a id="goLogin" href="#">Iniciar sesión</a>
@@ -208,20 +208,70 @@
             </div>
         </div>
         <script>
+            // Definición de variables
             const noAccount = document.getElementById('nocuenta');
             const closeModal = document.getElementById('closeModal')
             const registroBoton = document.getElementById('registroBoton')
             const goLogin = document.getElementById('goLogin')
             const openLogin = document.getElementById('openLogin')
             const closeRegister = document.getElementById('closeRegister')
+
+
             noAccount.addEventListener('click', () => {
                 closeModal.click();
                 registroBoton.click();
-            })
+            });
             goLogin.addEventListener('click', () => {
                 closeRegister.click()
                 openLogin.click();
-            })
+            });
+
+            // Sistema de registro
+            function saveDataRegister() {
+                let name = document.getElementById('nombre');
+                let email = document.getElementById('email');
+                let password = document.getElementById('password');
+                let level = document.getElementById('level')
+                let existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+                existingUsers.push({
+                    "name": name.value,
+                    "email": email.value,
+                    "password": password.value,
+                    "level": level.value
+                });
+
+                localStorage.setItem('users', JSON.stringify(existingUsers));
+
+                if (closeRegister) {
+                    closeRegister.click();
+                }
+            }
+
+            // Sistema login.
+            function saveDataLogin() {
+                let emailLogin = document.getElementById('emailLogin').value;
+                let emailPassword = document.getElementById('emailPassword').value;
+                let existingUsers = JSON.parse(localStorage.getItem('users'));
+
+                existingUsers.forEach(user => {
+                    if (user.email == emailLogin && user.password == emailPassword) {
+                        let userLog = JSON.parse(localStorage.getItem('userLog')) || [];
+                        userLog.push({
+                            'name': user.name,
+                            'email': user.email,
+                            'password': user.password
+                        })
+                        localStorage.setItem('userLog', JSON.stringify(userLog));
+                        window.location.href='perfil.html';
+                    }
+                    else {
+                        // no existe en el local storage
+                    }
+                });
+                return false;
+
+        }
+
         </script>
         <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
@@ -357,7 +407,6 @@
         </div>
     
     </div>
-    
 
 </body>
 
