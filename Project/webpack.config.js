@@ -6,9 +6,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/main.js",
+  entry: {
+    main: "./src/js/main.js",
+    profile: "./src/js/profile.js",
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
@@ -17,10 +20,15 @@ module.exports = {
     hot: true,
   },
   plugins: 
-  [new HtmlWebpackPlugin({ template: "./src/manu.html", filename: 'index.html' }),
-  new HtmlWebpackPlugin({ template: "./src/login.html", filename: 'login.html' }),
-  new HtmlWebpackPlugin({ template: "./src/perfil.html", filename: 'perfil.html' })
-
+  [new HtmlWebpackPlugin({
+    template: "./src/manu.html",
+    filename: 'index.html',
+    chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/perfil.html",
+      filename: 'perfil.html',
+      })
 ],
   module: {
     rules: [

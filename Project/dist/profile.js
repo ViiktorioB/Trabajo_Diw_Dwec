@@ -180,16 +180,6 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bootstrap_5_3_2_scss_bootstrap_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../bootstrap-5.3.2/scss/bootstrap.scss */ \"./src/bootstrap-5.3.2/scss/bootstrap.scss\");\n/* harmony import */ var _bootstrap_5_3_2_scss_bootstrap_grid_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bootstrap-5.3.2/scss/bootstrap-grid.scss */ \"./src/bootstrap-5.3.2/scss/bootstrap-grid.scss\");\n/* harmony import */ var _bootstrap_5_3_2_scss_bootstrap_utilities_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../bootstrap-5.3.2/scss/bootstrap-utilities.scss */ \"./src/bootstrap-5.3.2/scss/bootstrap-utilities.scss\");\n/* harmony import */ var _bootstrap_5_3_2_scss_bootstrap_reboot_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../bootstrap-5.3.2/scss/bootstrap-reboot.scss */ \"./src/bootstrap-5.3.2/scss/bootstrap-reboot.scss\");\n/* harmony import */ var _js_profile_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../js/profile.js */ \"./src/js/profile.js\");\n\n\n\n\n\n\n  // Definición de variables\n  const noAccount = document.getElementById(\"nocuenta\");\n  const closeModal = document.getElementById(\"closeModal\");\n  const registroBoton = document.getElementById(\"registroBoton\");\n  const goLogin = document.getElementById(\"goLogin\");\n  const loginBoton = document.getElementById(\"loginBoton\");\n  const closeRegister = document.getElementById(\"closeRegister\");\n  const userinfo = document.getElementById(\"userinfo\");\n\n  if (noAccount) {\n    noAccount.addEventListener(\"click\", () => {\n      closeModal.click();\n      registroBoton.click();\n    });\n  }\n\n  if (goLogin) {\n    goLogin.addEventListener(\"click\", () => {\n      closeRegister.click();\n      loginBoton.click();\n    });\n  }\n\n  // Sistema de registro\n  function saveDataRegister() {\n    let name = document.getElementById(\"nombre\");\n    let email = document.getElementById(\"email\");\n    let password = document.getElementById(\"password\");\n    let level = document.getElementById(\"level\");\n    let existingUsers = JSON.parse(localStorage.getItem(\"users\")) || [];\n    existingUsers.push({\n      name: name.value,\n      email: email.value,\n      password: password.value,\n      level: level.value,\n    });\n\n    localStorage.setItem(\"users\", JSON.stringify(existingUsers));\n\n    if (closeRegister) {\n      closeRegister.click();\n    }\n  }\n\n  // Sistema login.\n  function saveDataLogin() {\n    let emailLogin = document.getElementById(\"emailLogin\").value;\n    let emailPassword = document.getElementById(\"emailPassword\").value;\n    let existingUsers = JSON.parse(localStorage.getItem(\"users\"));\n    existingUsers.forEach((user) => {\n      if (user.email == emailLogin && user.password == emailPassword) {\n        let userLog = JSON.parse(localStorage.getItem(\"userLog\")) || [];\n        userLog.push({\n          name: user.name,\n          email: user.email,\n          password: user.password,\n        });\n        localStorage.setItem(\"userLog\", JSON.stringify(userLog));\n        userinfo.innerHTML = user.name;\n        displayButtons();\n      } else {\n        alert(\"Not found\");\n      }\n    });\n  }\n\n  // Listeners\n  let saveData = document.getElementById(\"saveData\");\n  if (saveData) {\n    saveData.addEventListener(\"click\", saveDataLogin);\n  }\n  let saveDataRegisterbutton = document.getElementById(\"saveDataRegister\");\n  if (saveDataRegisterbutton) {\n    saveDataRegisterbutton.addEventListener(\"click\", saveDataRegister);\n  }\n  let cerrarsesion = document.getElementById(\"cerrarsesion\");\n  if (cerrarsesion) {\n    cerrarsesion.addEventListener(\"click\", () => {\n      localStorage.removeItem(\"userLog\");\n      window.location.reload();\n    });\n  }\n\n  function displayButtons() {\n    if (localStorage.getItem(\"userLog\")) {\n      loginBoton.style.display = \"none\";\n      registroBoton.style.display = \"none\";\n      userinfo.style.display = \"block\";\n      const userLog = JSON.parse(localStorage.getItem(\"userLog\"));\n      userinfo.innerHTML = userLog[0].name;\n    } else {\n      loginBoton.style.display = \"block\";\n      registroBoton.style.display = \"block\";\n      userinfo.style.display = \"none\";\n    }\n  };\n\n\n\n//# sourceURL=webpack://kittens_webpack/./src/js/main.js?");
-
-/***/ }),
-
 /***/ "./src/js/profile.js":
 /*!***************************!*\
   !*** ./src/js/profile.js ***!
@@ -468,7 +458,7 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"main": 0
+/******/ 			"profile": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -496,7 +486,7 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/profile.js");
 /******/ 	
 /******/ })()
 ;
