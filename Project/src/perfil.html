@@ -43,9 +43,9 @@
             border-bottom: 2px solid rgb(0, 0, 0);
         }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
+        #imgPerfil {
+            width: 75%;
+            height: 75%;
         }
 
         .carusel {
@@ -96,27 +96,32 @@
         </header>
         <div class="container mt-5 mx-auto">
             <div class="row">
-                <div class="col-md-4 mx-auto">
+                <div class="col-md-4 mx-auto rounded">
                     <div class="card">
-                        <img src="profile.png" class="card-img-top img-fluid" alt="Foto de perfil">
+                        <img id="imgPerfil" src="profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
                         <div class="card-body">
                             <h5 class="card-title">Nombre</h5>
-                            <p class="card-text" id="nombrePerfil">Juan Pérez</p>
+                            <p class="card-text" id="nombrePerfil"></p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li id="mailPerfil" class="list-group-item">
-                                <strong>Email:</strong> juan.perez@example.com
+                            <li class="list-group-item">
+                                <strong>Email:</strong>
+                                <span id="mailPerfil"></span>
                             </li>
-                            <li id="levelPerfil" class="list-group-item">
-                                <strong>Nivel de Padel:</strong> Intermedio
+                            <li class="list-group-item">
+                                <strong>Nivel:</strong>
+                                <span id="levelPerfil"></span>
                             </li>
                         </ul>
                         <div class="card-body">
-                            <!-- Puedes agregar botones u otros elementos aquí -->
+                            <button id="backHome" class="btn btn-info">Volver atrás</button>
+                            <button class="btn btn-success">Mis reservas</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        
         </div>
 </body>
 
