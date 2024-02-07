@@ -10,3 +10,9 @@ if (nombrePerfil, mailPerfil, levelPerfil) {
     levelPerfil.innerText = userJSON[0].level;
 }
 
+let backHome = document.getElementById('backHome');
+if (backHome) {
+    backHome.addEventListener('click', () => {
+        window.location.href = 'index.html'
+    })
+}
