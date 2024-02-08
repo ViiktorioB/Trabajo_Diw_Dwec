@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     main: "./src/js/main.js",
     profile: "./src/js/profile.js",
+    apiMaps: "./src/js/apiMaps.js"
   },
   output: {
     filename: "[name].js",
@@ -28,7 +29,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/perfil.html",
       filename: 'perfil.html',
-      })
+      }),
+      new HtmlWebpackPlugin({
+        template: "./src/reservas.html",
+        filename: 'reservas.html',
+        })
 ],
   module: {
     rules: [

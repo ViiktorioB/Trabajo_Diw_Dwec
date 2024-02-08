@@ -33,7 +33,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
-  <script defer src="main.js"></script></head>
+
+    <!-- Scripts Api Google Maps-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI3Wnk0as89bj1u3vPxkis9QTPMUfHPWI&callback=initMap">
+  </script>
+  </head>
 
 
   <style>
@@ -61,38 +69,14 @@
 
     }
 
-    .titulos{
-        margin-top: 100px;
-        margin-bottom: 50px;
+    .titulosReservas{
+        margin-top: 50px;
+        margin-bottom: 2%;
         margin-left: 120px;
     }
 
     .navbar-nav .nav-item:hover .nav-link {
         border-bottom: 2px solid rgb(0, 0, 0);
-    }
-
-    .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .imgCarusel {
-        height: 400px;
-        width: 350px;
-
-    }
-
-    .carousel{
-        height: 500px;
-    }
-
-    .badge-globo {
-        margin-left: 20px;
-        font-size: 9px;
-    }
-
-    .caruselText {
-        color: black;
     }
 
     .textofoto {
@@ -106,6 +90,11 @@
         font-size: 16px;
         text-transform: uppercase;
         font-weight: bold;
+    }
+
+    #map {
+      height: 400px;
+      width: 70%;
     }
 
 </style>
@@ -256,155 +245,19 @@
                 </ul>
             </div>
         </div>
-        <script>
+</header>
 
-        </script>
-        <!--NO PUTO TOQUES HASTA AQUÍ-->
-    </header>
-    <div class="fondo align-items-center justify-content-center">
-        <div class="container text-center py-5">
-            <h1 class="text-white fw-bold">Vive la mejor experiencia de pádel</h1>
-            <h3 class="text-white fw-bold">Busca centros y horarios disponibles</h3>
-        </div>
-
-        <div class="container col-md-6 mt-5">
-            <form class="row g-4 bg-white py-4 rounded shadow">
-                <div class="col-md-4">
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="input1" name="input1" required>
-                            <option value="" disabled selected>Selecciona un centro</option>
-                            <option value="Palma Padel">Palma Padel</option>
-                            <option value="Duet Sports Portitxol">Duet Sports Portitxol</option>
-                            <option value="Padel factory">Padel factory</option>
-                        </select>
-                        <label for="input1">Centro</label>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="input2" placeholder="Campo 2" required>
-                        <label for="input2">Fecha</label>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="form-floating mb-3">
-                        <input type="time" step="1800" class="form-control" id="input3" placeholder="Campo 3" required>
-                        <label for="input3">Hora</label>
-                    </div>
-                </div>
-
-                <div class="col-md-12 text-center mt-3">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary">Buscar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    </div>
-    </div>   
+<h2 class="titulosReservas d-flex color-primary ">Gestiona tus reservas !!</h2>
+<div class="crudReservas">
+    <!-- Aqui ira el crud de las reservas-->
+</div>
 
 
-    <!-- Tarjetas -->
-
-    <h2 class="titulos d-flex color-primary position-relative">Estos son los centros de padel cercanos !!</h2>
-    <div class="card-group d-flex justify-content-around mt-5 h-100">
-        <div class="col-sm-3 h-100">
-            <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista2.jpeg" class="card-img-top opacity-75" alt="">
-                <div class="card-img-overlay text-white">
-                    <h3>Duet Pádel Portixol</h3>
-                </div>
-                <div class="card-body shadow-lg">
-                    <p class="card-text mt-2">Calle Cuba nº7, 07006</p>
-                    <button class="btn btn-outline-secondary text-secondary">Reservar</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 h-100">
-            <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista1.jpeg" class="card-img-top" alt="">
-                <div class="card-img-overlay text-white">
-                    <h3>Padel Club Mallorca</h3>
-                </div>
-                <div class="card-body shadow-lg">
-                    <p class="card-text mt-2">Carrer George Sand 4, 07007</p>
-                    <button class="btn btn-outline-secondary text-secondary">Reservar</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 h-100">
-            <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista3.jpeg" class="card-img-top" alt="">
-                <div class="card-img-overlay text-white">
-                    <h3>Palma Padel</h3>
-                </div>
-                <div class="card-body shadow-lg">
-                    <p class="card-text mt-2">Carrer de Castellà la Manxa 6, 07011</p>
-                    <button class="btn bg-secondary text-white">Reservar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <h2 class="titulos d-flex color-primary position-relative">
-        Un poco de nuestra nueva tienda online
-        <span class="badge badge-primary badge-globo bg-primary">NEW!!</span>
-    </h2>
-
-    <!-- Imagenes Carusel -->
-
-    <div class="carousel slide color-primary mt-5 position-relative bg-primary" data-bs-ride="carousel">
-        <div class="carousel-inner">
-    
-            <div class="carousel-item active mt-5">
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala1.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 1">
-                    <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
-                        <h3 class="caruselText py-2">Odin Pro Black</h3>
-                        <p class="caruselText overflow-wrap">Pala de pádel de alta calidad fabricada de manera artesanal en Barcelona. Confeccionada con Fibra de Carbono 3K integral HEXCEL y fibra de vidrio de doble capa y doble espesor, con tubular y core en 100% CARBONO KEVLAR. </p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="carousel-item mt-5">
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala2.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 2">
-                    <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
-                        <h3 class="caruselText py-2 ">Nox MX 10</h3>
-                        <p class="caruselText overflow-wrap">Disfruta de la resistencia gracia a su composición de carbono en toda la estructura. Su forma diamante maximizará tu potencia en cada golpe. Hecha con una combinación de materiales en carbono y fibras de vidrio que destacan por proporcionar mayor resistencia.</p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="carousel-item mt-5">
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala3.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 3">
-                    <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
-                        <h3 class="caruselText py-2">BullPadel Pro Carbon 16K</h3>
-                        <p class="caruselText overflow-wrap">Pala Bullpadel Neuron 2024, forma híbrida y balance bajo, es el modelo que empuñará Fede Chingotto para la nueva temporada. Aporta polivalencia durante el juego. Planos de Xtend Carbon 12K y núcleo de goma Multieva. Perfecta para juadores profesionales</p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <a class="carousel-control-prev"  role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-          </a>
-          <a class="carousel-control-next"  role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </a>
-    
-    </div>
-
+<div id="map" class="d-flex">
+    <gmp-advanced-marker id="marker" title="My location">
+    </gmp-advanced-marker>
+</div>
+<script src="apiMaps.js"></script>
 </body>
 
 </html>
