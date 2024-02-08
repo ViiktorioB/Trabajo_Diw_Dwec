@@ -88,6 +88,9 @@ if (saveData) {
       if (!saveDataLogin()) {
         spinner.style.display = "none";
         notfound.style.display = "block";
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else {
         spinner.style.display = "none";
         done.style.display = "block";
