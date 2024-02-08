@@ -3,6 +3,8 @@ import "../bootstrap-5.3.2/scss/bootstrap-grid.scss";
 import "../bootstrap-5.3.2/scss/bootstrap-utilities.scss";
 import "../bootstrap-5.3.2/scss/bootstrap-reboot.scss";
 import "../js/profile.js";
+import "../js/crud.js";
+
 
 // Definición de variables
 const noAccount = document.getElementById("nocuenta");
