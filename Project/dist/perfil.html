@@ -43,9 +43,9 @@
             border-bottom: 2px solid rgb(0, 0, 0);
         }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
+        #imgPerfil {
+            width: 75%;
+            height: 75%;
         }
 
         .carusel {
@@ -57,7 +57,7 @@
             font-size: 9px;
         }
     </style>
-<script defer src="main.js"></script><script defer src="profile.js"></script></head>
+<script defer src="main.js"></script><script defer src="profile.js"></script><script defer src="apiMaps.js"></script></head>
 
 <body class="bg-danger">
     <header class="header col-sm-12 bg-white">
@@ -94,10 +94,35 @@
                     </div>
             </nav>
         </header>
-
-                <h1 id="h1perfil">
-                    Adiós
-                </h1>
+        <div class="container mt-5 mx-auto">
+            <div class="row">
+                <div class="col-md-4 mx-auto rounded">
+                    <div class="card">
+                        <img id="imgPerfil" src="profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre</h5>
+                            <p class="card-text" id="nombrePerfil"></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Email:</strong>
+                                <span id="mailPerfil"></span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Nivel:</strong>
+                                <span id="levelPerfil"></span>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <button id="backHome" class="btn btn-info">Volver atrás</button>
+                            <button class="btn btn-success">Mis reservas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
 </body>
 
 </html>
