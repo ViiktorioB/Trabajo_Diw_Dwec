@@ -33,7 +33,11 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: "./src/reservas.html",
         filename: 'reservas.html',
-        })
+        }),
+        new HtmlWebpackPlugin({
+          template: "./src/crud.html",
+          filename: 'crud.html',
+          })
 ],
   module: {
     rules: [
