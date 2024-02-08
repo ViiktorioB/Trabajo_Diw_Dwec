@@ -61,7 +61,7 @@ function initMap() {
         const data = await response.json();
   
         const label1 = {
-          text: "Estas aqui",
+          text: "Ubicacion Actual",
           color: "black",
           fontSize: "15px",
         };

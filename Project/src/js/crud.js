@@ -67,17 +67,42 @@ if (verTodo) {
         const getAllRequest = objectStore.getAll(); 
       
         getAllRequest.onsuccess = function (ev) {
-          const reservas = ev.target.result;
-          reservas.forEach((reserva) => {
-            console.log(reserva);
-          });
+            const reservas = ev.target.result;
+            const tablaReservas = document.getElementById("tablaReservas");
+          
+            // Limpiar la tabla antes de agregar nuevas filas
+            tablaReservas.innerHTML = "";
+          
+            // Agregar una fila por cada reserva
+            reservas.forEach((reserva) => {
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td class="align-middle">${reserva.fecha}</td>
+                    <td class="align-middle">${reserva.hora}</td>
+                    <td class="align-middle">${reserva.centro.name}</td>
+                    <td class="align-middle">
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-person-fill-add"></i>
+                        </button>
+                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-person-fill-gear"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <i class="bi bi-person-fill-gear"></i>
+                        </button>
+                    </td>`;
+                
+                tablaReservas.appendChild(fila);
+            });
         };
       
         getAllRequest.onerror = function (ev) {
-          console.error('Error fetching data:', ev.target.error);
+            console.error('Error fetching data:', ev.target.error);
         };
-      });
+    });
 }
+
+
 
 
 
