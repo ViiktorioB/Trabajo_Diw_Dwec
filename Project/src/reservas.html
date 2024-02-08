@@ -94,7 +94,16 @@
 
     #map {
       height: 400px;
-      width: 70%;
+      width: 60%;
+    }
+
+    .divMapa{
+        background: url('./pistamapa.jpeg') no-repeat center;
+        background-size: cover;
+        height: 600px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
     }
 
 </style>
@@ -252,10 +261,11 @@
     <!-- Aqui ira el crud de las reservas-->
 </div>
 
-
+<div class="divMapa d-flex bg-primary">
 <div id="map" class="d-flex">
     <gmp-advanced-marker id="marker" title="My location">
     </gmp-advanced-marker>
+</div>
 </div>
 <script src="apiMaps.js"></script>
 </body>
