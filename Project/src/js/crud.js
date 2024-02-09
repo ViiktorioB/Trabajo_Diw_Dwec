@@ -24,12 +24,11 @@ function initDB() {
   };
 }
 
-function eliminarReserva(reservaID){
-
+function eliminarReserva(reservaId) {
   const transaccion = db.transaction(["Reservas"], "readwrite");
   const objectStore = transaccion.objectStore("Reservas");
 
-  const solicitud = objectStore.delete(reservaID);
+  const solicitud = objectStore.delete(reservaId);
 
   solicitud.onsuccess = () => {
     console.log("Reserva eliminada correctamente");
@@ -136,7 +135,7 @@ function mostrarReservas(reservas) {
         <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="bi bi-pencil-fill"></i>
         </button>
-        <button id="deleteButton" type="button" class="btn btn-danger btn-sm">
+        <button id="deleteButton" type="button" class="btn btn-danger btn-sm" onclick="eliminarReserva(${reserva.id})">
           <i class="bi bi-calendar-x-fill"></i>
         </button>
       </td>`;
@@ -145,11 +144,8 @@ function mostrarReservas(reservas) {
         tablaReservas.appendChild(fila);
       }
 
-      const deleteButton = fila.querySelector("#deleteButton");
-      deleteButton.addEventListener("click", () => eliminarReserva(reserva.id));
-});
+  });
 }
-
 
 
 document.addEventListener("DOMContentLoaded", initDB);
