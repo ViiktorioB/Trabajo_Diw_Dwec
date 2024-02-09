@@ -84,13 +84,13 @@ request.onsuccess = (event) => {
                     <td class="align-middle">${reserva.centro.name}</td>
                     <td class="align-middle">
                         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="bi bi-person-fill-add"></i>
+                        <i class="bi bi-gear-fill"></i>
                         </button>
                         <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="bi bi-person-fill-gear"></i>
+                        <i class="bi bi-pencil-fill"></i>
                         </button>
                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <i class="bi bi-person-fill-gear"></i>
+                        <i class="bi bi-calendar-x-fill"></i>
                         </button>
                     </td>`;
 
