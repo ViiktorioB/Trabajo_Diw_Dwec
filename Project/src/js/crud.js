@@ -103,7 +103,7 @@ request.onsuccess = (event) => {
       };
     });
   }
-
+  
   byNameButton = document.getElementById("byName");
   if (byNameButton) {
     byNameButton.addEventListener("click", () => {
@@ -113,18 +113,30 @@ request.onsuccess = (event) => {
       const transaccion = db.transaction(["Reservas"], "readwrite");
       const objectStore = transaccion.objectStore("Reservas");
       const index = objectStore.index("userIndex");
-
-      const cursorRequest = index.openCursor(IDBKeyRange.only(usuarioActual));
-
-      cursorRequest.onsuccess = (event) => {
-        const cursor = event.target.result;
-        if (cursor) {
-          const reserva = cursor.value;
-
-          console.log(reserva);
-
-          cursor.continue();
-        }
+      const getAllRequest = objectStore.index('userIndex').getAll();
+      getAllRequest.onsuccess = (ev) => {
+        const cursor = ev.target.result;
+        console.log(cursor);
+        cursor.forEach(reserva => {
+            const fila = document.createElement("tr");
+            fila.innerHTML = `
+                      <td class="align-middle">${reserva.fecha}</td>
+                      <td class="align-middle">${reserva.hora}</td>
+                      <td class="align-middle">${reserva.centro.name}</td>
+                      <td class="align-middle">
+                          <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              <i class="bi bi-person-fill-add"></i>
+                          </button>
+                          <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              <i class="bi bi-person-fill-gear"></i>
+                          </button>
+                          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              <i class="bi bi-person-fill-gear"></i>
+                          </button>
+                      </td>`;
+  
+            tablaReservas.appendChild(fila);
+          });
       };
     });
   }
