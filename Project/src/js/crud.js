@@ -24,12 +24,12 @@ function initDB() {
   };
 }
 
-// Métodos del CRUD.
-function eliminarReserva(reservaId) {
+function eliminarReserva(reservaID){
+
   const transaccion = db.transaction(["Reservas"], "readwrite");
   const objectStore = transaccion.objectStore("Reservas");
 
-  const solicitud = objectStore.delete(reservaId);
+  const solicitud = objectStore.delete(reservaID);
 
   solicitud.onsuccess = () => {
     console.log("Reserva eliminada correctamente");
