@@ -66,58 +66,7 @@ request.onsuccess = (event) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  //MÍO
   let verTodo = document.getElementById("verTodo");
   if (verTodo) {
     verTodo.addEventListener("click", () => {
@@ -164,6 +113,8 @@ request.onsuccess = (event) => {
     });
   }
 };
+
+// MIO HASTA AQUÍ
 const ver = () => {};
 
 const actualizar = () => {};
