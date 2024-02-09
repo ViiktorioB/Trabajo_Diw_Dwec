@@ -135,7 +135,7 @@ function mostrarReservas(reservas) {
         <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="bi bi-pencil-fill"></i>
         </button>
-        <button id="deleteButton" type="button" class="btn btn-danger btn-sm" onclick="eliminarReserva(${reserva.id})">
+        <button id="deleteButton" type="button" class="btn btn-danger btn-sm">
           <i class="bi bi-calendar-x-fill"></i>
         </button>
       </td>`;
@@ -144,8 +144,11 @@ function mostrarReservas(reservas) {
         tablaReservas.appendChild(fila);
       }
 
-  });
+      const deleteButton = fila.querySelector("#deleteButton");
+      deleteButton.addEventListener("click", () => eliminarReserva(reserva.id));
+});
 }
+
 
 
 document.addEventListener("DOMContentLoaded", initDB);
