@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -8,17 +9,17 @@
     <script>
         function displayButtons() {
             if (localStorage.getItem('userLog')) {
-            loginBoton.style.display = 'none';
-            registroBoton.style.display = 'none';
-            userinfo.style.display = 'block'
-            const userLog = JSON.parse(localStorage.getItem('userLog'));
-            userinfo.innerHTML = userLog[0].name;
-        }
-        else {
-            loginBoton.style.display = 'block'; 
-            registroBoton.style.display = 'block';
-            userinfo.style.display = 'none'
-        }
+                loginBoton.style.display = 'none';
+                registroBoton.style.display = 'none';
+                userinfo.style.display = 'block'
+                const userLog = JSON.parse(localStorage.getItem('userLog'));
+                userinfo.innerHTML = userLog[0].name;
+            }
+            else {
+                loginBoton.style.display = 'block';
+                registroBoton.style.display = 'block';
+                userinfo.style.display = 'none'
+            }
         }
 
     </script>
@@ -30,60 +31,56 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
 
 
-  <style>
-    
+<style>
     .logo {
-            height: 10vh;
-        }
+        height: 10vh;
+    }
 
-        .header .navbar {
-            background-color: transparent !important;
-        }
+    .header .navbar {
+        background-color: transparent !important;
+    }
 
-        .navbar {
-            min-height: 12vh;
-        }
+    .navbar {
+        min-height: 12vh;
+    }
 
-        .iniciosession {
-            margin-left: 20px;
-        }
+    .iniciosession {
+        margin-left: 20px;
+    }
 
-        .fondo {
-            background: url('./wp4283319.jpg') no-repeat center;
-            background-size: cover;
-            min-height: 70vh;
-        }
+    .fondo {
+        background: url('./wp4283319.jpg') no-repeat center;
+        background-size: cover;
+        min-height: 70vh;
+    }
 
-        .navbar-nav .nav-item:hover .nav-link {
-            border-bottom: 2px solid rgb(0, 0, 0);
-        }
+    .navbar-nav .nav-item:hover .nav-link {
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
 
-        #imgPerfil {
-            width: 75%;
-            height: 75%;
-        }
+    #imgPerfil {
+        width: 75%;
+        height: 75%;
+    }
 
-        .carusel {
-            margin-top: 16vh;
-        }
+    .carusel {
+        margin-top: 16vh;
+    }
 
-        .badge-globo {
-            margin-left: 20px;
-            font-size: 9px;
-        }
+    .badge-globo {
+        margin-left: 20px;
+        font-size: 9px;
+    }
 
-        #userinfo{
+    #userinfo {
         margin-left: 40px;
         width: 180px;
         padding: 5px;
@@ -91,45 +88,43 @@
         text-transform: uppercase;
         font-weight: bold;
     }
-
-
 </style>
 </head>
 
 <body onload="displayButtons()" class="bg-danger">
-<header class="header col-sm-12 bg-white">
-    <div class="container d-flex justify-content-end align-items-center">
-        <div class="container d-flex col-sm-7 justify-content-start">
+    <header class="header col-sm-12 bg-white">
+        <div class="container d-flex justify-content-end align-items-center">
+            <div class="container d-flex col-sm-7 justify-content-start">
                 <img src="./logoprueba.png" alt="logo" class="logo">
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-black fs-6" href="/">Inicio </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link text-black fs-6" href="reservas.html">Reserva</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black fs-6" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Pistas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item fs-6" href="#">Dobles</a></li>
-                                <li><a class="dropdown-item fs-6" href="#">Individuales</a></li>
-                                <li><a class="dropdown-item fs-6" href="#">Cubiertas</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-        </nav>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-black fs-6" href="/">Inicio </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-black fs-6" href="reservas.html">Reserva</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black fs-6" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pistas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item fs-6" href="#">Dobles</a></li>
+                                    <li><a class="dropdown-item fs-6" href="#">Individuales</a></li>
+                                    <li><a class="dropdown-item fs-6" href="#">Cubiertas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
             <!--NO PUTO TOQUES-->
             <div class="iniciosession d-flex align-items-center">
                 <a id="loginBoton" href="login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary"
@@ -162,19 +157,26 @@
                                         <label class="form-check-label" for="connected"> Mantenerme conectado </label>
                                     </div>
                                     <div class="d-grid">
-                                        <button type="submit" id="saveData" class="btn btn-success">Iniciar sesión</button>
-                                        <button class="btn btn-primary" type="button" id="spinner" style="display: none;" disabled>
-                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <button type="submit" id="saveData" class="btn btn-success">Iniciar
+                                            sesión</button>
+                                        <button class="btn btn-primary" type="button" id="spinner"
+                                            style="display: none;" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
                                             <span class="sr-only">Loading...</span>
-                                          </button>
-                                          <button class="btn btn-warning" type="button" id="done" style="display: none;" disabled>
-                                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="btn btn-warning" type="button" id="done" style="display: none;"
+                                            disabled>
+                                            <span class="spinner-grow spinner-grow-sm" role="status"
+                                                aria-hidden="true"></span>
                                             ¡Hecho!
-                                          </button>
-                                          <button class="btn btn-rojo" type="button" id="notfound" style="display: none;" disabled>
-                                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="btn btn-rojo" type="button" id="notfound" style="display: none;"
+                                            disabled>
+                                            <span class="spinner-grow spinner-grow-sm" role="status"
+                                                aria-hidden="true"></span>
                                             Usuario no encontrado
-                                          </button>
+                                        </button>
                                     </div>
                                     <div class="my-3 text-center">
                                         <span>¿No tienes cuenta?</span> <a href="#" id="nocuenta">Regístrate</a>
@@ -223,7 +225,8 @@
                                     </div>
 
                                     <div class="d-grid">
-                                        <button type="submit" id="saveDataRegister" class="btn btn-info">Registrarme</button>
+                                        <button type="submit" id="saveDataRegister"
+                                            class="btn btn-info">Registrarme</button>
                                     </div>
                                     <div class="my-3 text-center">
                                         <span>¿Ya estás registrado?</span> <a href="#" id="goLogin">Iniciar sesión</a>
@@ -234,61 +237,61 @@
                     </div>
                 </div>
                 <a id="userinfo" class="btn btn-info dropdown-toggle text-black fs-7" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"></a>
+                    data-bs-toggle="dropdown" aria-expanded="false"></a>
                 <ul class="dropdown-menu">
                     <li><a id="miperfil" class="dropdown-item fs-7" href="perfil.html">Mi perfil</a></li>
                     <li><a id="cerrarsesion" class="dropdown-item fs-7" href="">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
-</header>
+    </header>
 
-        <div class="container mt-5 mx-auto">
-            <div class="row">
-                <div class="col-md-4 mx-auto rounded">
-                    <!-- Perfil -->
-                    <div class="card">
-                        <img id="imgPerfil" src="profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre</h5>
-                            <p class="card-text" id="nombrePerfil"></p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <strong>Email:</strong>
-                                <span id="mailPerfil"></span>
-                            </li>
-                            <li class="list-group-item">
-                                <strong>Nivel:</strong>
-                                <span id="levelPerfil"></span>
-                            </li>
-                        </ul>
-                        <div class="card-body">
-                            <button id="backHome" class="btn btn-info">Volver atrás</button>
-                        </div>
+    <div class="container mt-5 mx-auto">
+        <div class="row">
+            <div class="col-md-4 mx-auto rounded">
+                <!-- Perfil -->
+                <div class="card">
+                    <img id="imgPerfil" src="profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre</h5>
+                        <p class="card-text" id="nombrePerfil"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Email:</strong>
+                            <span id="mailPerfil"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Nivel:</strong>
+                            <span id="levelPerfil"></span>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <button id="backHome" class="btn btn-info">Volver atrás</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Reservas tabla -->
-                <div class="col-md-8">
-                    <h2 class="mb-4">Tus reservas</h2>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="bg-primary text-white">Fecha</th>
-                                <th scope="col" class="bg-primary text-white">Hora</th>
-                                <th scope="col" class="bg-primary text-white">Centro</th>
-                                <th scope="col" class="bg-primary text-white">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tablaReservas">
-                        </tbody>
-                    </table>
-                </div>
+            <!-- Reservas tabla -->
+            <div class="col-md-8">
+                <h2 class="mb-4">Tus reservas</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bg-primary text-white">Fecha</th>
+                            <th scope="col" class="bg-primary text-white">Hora</th>
+                            <th scope="col" class="bg-primary text-white">Centro</th>
+                            <th scope="col" class="bg-primary text-white">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReservas">
+                    </tbody>
+                </table>
             </div>
         </div>
-        
-      
+    </div>
+
+
 </body>
 
 </html>

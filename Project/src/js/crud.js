@@ -129,14 +129,27 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.fecha}</td>
       <td class="align-middle">${reserva.hora}</td>
       <td class="align-middle">${reserva.centro.name}</td>
-    `;
+      <td class="align-middle">
+        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-gear-fill"></i>
+        </button>
+        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+        <button id="deleteButton" type="button" class="btn btn-danger btn-sm">
+          <i class="bi bi-calendar-x-fill"></i>
+        </button>
+      </td>`;
 
       if (tablaReservas) {
         tablaReservas.appendChild(fila);
       }
 
-  });
+      const deleteButton = fila.querySelector("#deleteButton");
+      deleteButton.addEventListener("click", () => eliminarReserva(reserva.id));
+});
 }
+
 
 
 document.addEventListener("DOMContentLoaded", initDB);
