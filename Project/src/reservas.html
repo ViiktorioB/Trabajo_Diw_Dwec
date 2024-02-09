@@ -269,8 +269,8 @@
 
 <h2 class="titulosReservas d-flex color-primary ">Buscate un momento para jugar y reserva con cualquier persona a cualquier hora</h2>
 <h4 class="titulosReservas2 d-flex color-primary ">Nuestras instalaciones disponibles</h4>
+
 <div class="formulario m-5 bg-primary row text-white py-3 rounded">
-<div id="successReserva" class="alert alert-warning" role="alert" style="display: none;"></div>
     <div class="mb-3 col">
         <label for="centro" class="form-label">Centro</label>
         <select class="form-select py-3" id="centro">
@@ -311,11 +311,13 @@
         <input type="date" class="form-control py-3" id="date">
     </div>
 
-    <div class="col-12 mt-2">
+    <div class="col-12 mt-2 align-items-center">
         <button id="añadir" class="btn btn-success m-1 py-2">Añadir</button>
         <button id="verTodo" class="btn btn-secondary m-1 py-2">Ver todo</button>
-        <a href="./perfil.html" id="byName" class="btn btn-info m-1 py-2"> Mis reservas</a>
+        <a href="./perfil.html" id="byName" class="btn btn-info m-1 py-2">Mis reservas</a>
+        <div id="successReserva" class="alert alert-warning py-2 m-1 w-25" role="alert" style="display: none;"></div>
     </div>
+   
 </div>
 
 
