@@ -41,7 +41,7 @@
     <script async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI3Wnk0as89bj1u3vPxkis9QTPMUfHPWI&callback=initMap">
   </script>
-  </head>
+  <script defer src="main.js"></script><script defer src="profile.js"></script><script defer src="apiMaps.js"></script></head>
 
 
   <style>
@@ -71,18 +71,10 @@
 
     .titulosReservas{
         margin-top: 50px;
-        margin-left: 70px;
-        font-size: 40px;
-        
+        margin-bottom: 2%;
+        margin-left: 120px;
     }
 
-
-    .titulosReservas2{
-        margin-top: 20px;
-        margin-left: 70px;
-
-    }
-   
     .navbar-nav .nav-item:hover .nav-link {
         border-bottom: 2px solid rgb(0, 0, 0);
     }
@@ -101,19 +93,7 @@
     }
 
     #map {
-      height: 400px;
-      width: 60%;
-    }
-
- 
-
-    .divMapa{
-        background: url('./pistamapa.jpeg') no-repeat;
-        background-size: cover;
-        height: 600px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;
+      height: 90%;
     }
 
 </style>
@@ -266,68 +246,14 @@
         </div>
 </header>
 
-
-<h2 class="titulosReservas d-flex color-primary ">Buscate un momento para jugar y reserva con cualquier persona a cualquier hora</h2>
-<h4 class="titulosReservas2 d-flex color-primary ">Nuestras instalaciones disponibles</h4>
-<div class="formulario m-5 bg-primary row text-white py-3 rounded">
-
-    <div class="mb-3 col">
-        <label for="centro" class="form-label">Centro</label>
-        <select class="form-select py-3" id="centro">
-            <option value="duet" data-latitud="39.562722" data-longitud="2.674083">Duet Sports Portitxol</option>
-            <option value="palmapadel" data-latitud="39.585667" data-longitud="2.620639">Palma Padel</option>
-            <option value="palmafactory" data-latitud="39.571556" data-longitud="2.680361">Palma Factory</option>
-        </select>
-    </div>
-
-    <div class="mb-3 col">
-        <label for="hora" class="form-label">Hora</label>
-        <select class="form-select py-3" id="hora">
-            <!-- Mañana -->
-            <option value="09:00">09:00</option>
-            <option value="09:30">09:30</option>
-            <option value="10:00">10:00</option>
-            <option value="10:30">10:30</option>
-            <option value="11:00">11:00</option>
-            <option value="11:30">11:30</option>
-            <option value="12:00">12:00</option>
-            <option value="12:30">12:30</option>
-
-            <!-- Tarde -->
-            <option value="16:00">16:00</option>
-            <option value="16:30">16:30</option>
-            <option value="17:00">17:00</option>
-            <option value="17:30">17:30</option>
-            <option value="18:00">18:00</option>
-            <option value="18:30">18:30</option>
-            <option value="19:00">19:00</option>
-            <option value="19:30">19:30</option>
-            <option value="20:00">20:00</option>
-        </select>
-    </div>
-
-    <div class="mb-3 col">
-        <label for="date" class="form-label">Fecha</label>
-        <input type="date" class="form-control py-3" id="date">
-    </div>
-
-    <div class="col-12 mt-2">
-        <button id="añadir" class="btn btn-success m-1 py-2">Añadir</button>
-        <button id="verTodo" class="btn btn-secondary m-1 py-2">Ver todo</button>
-        <button id="byName" class="btn btn-info m-1 py-2">Mis reservas</button>
-    </div>
+<h2 class="titulosReservas d-flex color-primary ">Gestiona tus reservas !!</h2>
+<div class="crudReservas">
+    <!-- Aqui ira el crud de las reservas-->
 </div>
 
-
-
-<div class="divMapa d-flex bg-primary">
-    <div class="textoMapa m-3 bg-secondary text-white bg-opacity-75 rounded">
-        <h2 class="m-2">Busca un centro cerca de ti</h2>
-    </div>
-<div id="map" class="d-flex rounded border border-secondary">
+<div id="map" class="d-flex">
     <gmp-advanced-marker id="marker" title="My location">
     </gmp-advanced-marker>
-</div>
 </div>
 <script src="apiMaps.js"></script>
 </body>
