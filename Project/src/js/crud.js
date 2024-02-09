@@ -23,11 +23,12 @@ function initDB() {
   };
 }
 
-function eliminarReserva(reservaId) {
+function eliminarReserva(reservaID){
+
   const transaccion = db.transaction(["Reservas"], "readwrite");
   const objectStore = transaccion.objectStore("Reservas");
 
-  const solicitud = objectStore.delete(reservaId);
+  const solicitud = objectStore.delete(reservaID);
 
   solicitud.onsuccess = () => {
     console.log("Reserva eliminada correctamente");
@@ -123,17 +124,7 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.fecha}</td>
       <td class="align-middle">${reserva.hora}</td>
       <td class="align-middle">${reserva.centro.name}</td>
-      <td class="align-middle">
-        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="bi bi-gear-fill"></i>
-        </button>
-        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="bi bi-pencil-fill"></i>
-        </button>
-        <button id="deleteButton" type="button" class="btn btn-danger btn-sm" onclick="eliminarReserva(${reserva.id})">
-          <i class="bi bi-calendar-x-fill"></i>
-        </button>
-      </td>`;
+    `;
 
     tablaReservas.appendChild(fila);
 
