@@ -304,6 +304,7 @@ $success:       #BFCFE7;
 $info:          #F8EDFF;
 $warning:       $green !default;
 $rojo:          $red !default;
+$green:         $green !default;
 $danger:        #eeecec;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
@@ -317,6 +318,7 @@ $theme-colors: (
   "info":       $info,
   "warning":    $warning,
   "rojo":       $rojo,
+  "green":      $green,
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark
