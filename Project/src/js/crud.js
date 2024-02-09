@@ -19,6 +19,7 @@ function initDB() {
 
   request.onsuccess = (event) => {
     db = event.target.result;
+    verReservasPorNombre();
     addEventListeners();
   };
 }
@@ -57,6 +58,7 @@ function addEventListeners() {
     byNameButton.addEventListener("click", verReservasPorNombre);
   }
 }
+
 
 function añadirReserva() {
   const transaccion = db.transaction(["Reservas"], "readwrite");
@@ -116,7 +118,10 @@ function verReservasPorNombre() {
 function mostrarReservas(reservas) {
 
   const tablaReservas = document.getElementById("tablaReservas");
-  tablaReservas.innerHTML = "";
+  if (tablaReservas) {
+    tablaReservas.innerHTML = "";
+
+  }
 
   reservas.forEach((reserva) => {
     const fila = document.createElement("tr");
@@ -126,11 +131,12 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.centro.name}</td>
     `;
 
-    tablaReservas.appendChild(fila);
+      if (tablaReservas) {
+        tablaReservas.appendChild(fila);
+      }
 
   });
 }
 
 
-// Inicializar la base de datos al cargar la página
 document.addEventListener("DOMContentLoaded", initDB);
