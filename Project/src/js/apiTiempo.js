@@ -20,7 +20,6 @@ window.addEventListener('load', () => {
                 .then(response => { return response.json() })
                 .then(data => {
 
-                    console.log(data)
                     let temp = Math.round(data.main.temp)
                     temperaturaValor.textContent = `${temp-273}`
 
