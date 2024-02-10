@@ -113,7 +113,7 @@ function añadirReserva() {
   const objectStore = transaccion.objectStore("Reservas");
   usuarioLog = localStorage.getItem("userLog");
   userJSON = JSON.parse(usuarioLog);
-  if (userJSON) {
+  if (userJSON, date.value) {
     const nuevaReserva = {
       centro: {
         name: centro.value,
@@ -139,9 +139,19 @@ function añadirReserva() {
   }
 
   else {
-    let errorReserva = document.getElementById("errorReserva");
-    errorReserva.innerText = "Para realizar esta acción debes iniciar sesión.";
-    errorReserva.style.display = "block";
+    if (!userJSON) {
+      let errorReserva = document.getElementById("errorReserva");
+      errorReserva.innerText = "Para realizar esta acción debes iniciar sesión.";
+      errorReserva.style.display = "block";
+  
+    }
+
+    else {
+      let errorReserva = document.getElementById("errorReserva");
+      errorReserva.innerText = "Debes introducir una fecha.";
+      errorReserva.style.display = "block";
+
+    }
 
   }
 }
