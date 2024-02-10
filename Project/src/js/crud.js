@@ -168,10 +168,9 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.hora}</td>
       <td class="align-middle">${reserva.centro.name}</td>
       <td class="align-middle">
-        <button id="modifyButton" type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modifyModal" data-toggle="tooltip" data-placement="top" title="Editar Reserva">
+        <button id="modifyButton" type="button" class="btn btn-info btn-sm" data-bs-toggle="modifyModal" data-bs-target="#modifyModal" data-toggle="tooltip" data-placement="top" title="Editar Reserva">
           <i class="bi bi-pencil-fill"></i>
         </button>
-        <!-- Modal para modificar reserva -->
 <div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="modifyModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
