@@ -78,15 +78,10 @@ function mostrarFormularioModificar(reserva) {
 
 function addEventListeners() {
   const añadirBoton = document.getElementById("añadir");
-  const verTodo = document.getElementById("verTodo");
   const byNameButton = document.getElementById("byName");
 
   if (añadirBoton) {
     añadirBoton.addEventListener("click", añadirReserva);
-  }
-
-  if (verTodo) {
-    verTodo.addEventListener("click", verTodasLasReservas);
   }
 
   if (byNameButton) {
