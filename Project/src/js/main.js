@@ -36,6 +36,7 @@ function saveDataRegister() {
   let password = document.getElementById("password");
   let level = document.getElementById("level");
   let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
   existingUsers.push({
     name: name.value,
     email: email.value,
@@ -56,21 +57,24 @@ function saveDataLogin() {
   let emailPassword = document.getElementById("emailPassword").value;
   let existingUsers = JSON.parse(localStorage.getItem("users"));
 
-  for (let user of existingUsers) {
-    if (user.email === emailLogin && user.password === emailPassword) {
-      let userLog = JSON.parse(localStorage.getItem("userLog")) || [];
-      userLog.push({
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        level: user.level,
-      });
-      localStorage.setItem("userLog", JSON.stringify(userLog));
-      userinfo.innerHTML = user.name;
-      displayButtons();
-      return true;
+  if (existingUsers !=null) {
+    for (let user of existingUsers) {
+      if (user.email === emailLogin && user.password === emailPassword) {
+        let userLog = JSON.parse(localStorage.getItem("userLog")) || [];
+        userLog.push({
+          name: user.name,
+          email: user.email,
+          password: user.password,
+          level: user.level,
+        });
+        localStorage.setItem("userLog", JSON.stringify(userLog));
+        userinfo.innerHTML = user.name;
+        displayButtons();
+        return true;
+      }
     }
   }
+
 
   return false;
 }
