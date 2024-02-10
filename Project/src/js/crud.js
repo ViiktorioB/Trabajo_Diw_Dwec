@@ -22,6 +22,14 @@ function initDB() {
     verReservasPorNombre();
     addEventListeners();
   };
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipTriggerEl) => {
+    new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 }
 
 function eliminarReserva(reservaId) {
@@ -160,7 +168,7 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.hora}</td>
       <td class="align-middle">${reserva.centro.name}</td>
       <td class="align-middle">
-        <button id="modifyButton" type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modifyModal">
+        <button id="modifyButton" type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modifyModal" data-toggle="tooltip" data-placement="top" title="Editar Reserva">
           <i class="bi bi-pencil-fill"></i>
         </button>
         <!-- Modal para modificar reserva -->
@@ -188,7 +196,7 @@ function mostrarReservas(reservas) {
   </div>
 </div>
 
-        <button id="deleteButton" type="button" class="btn btn-danger btn-sm">
+        <button id="deleteButton" type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Borrar Reserva">
           <i class="bi bi-calendar-x-fill"></i>
         </button>
       </td>`;
