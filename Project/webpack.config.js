@@ -9,7 +9,8 @@ module.exports = {
   entry: {
     main: "./src/js/main.js",
     profile: "./src/js/profile.js",
-    apiMaps: "./src/js/apiMaps.js"
+    apiMaps: "./src/js/apiMaps.js",
+    apiTiempo: "./src/js/apiTiempo.js"
   },
   output: {
     filename: "[name].js",
