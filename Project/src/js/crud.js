@@ -27,9 +27,11 @@ function initDB() {
     $('[data-toggle="tooltip"]').tooltip();
   });
 
-  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipTriggerEl) => {
-    new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((tooltipTriggerEl) => {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 }
 
 function eliminarReserva(reservaId) {
@@ -49,39 +51,39 @@ function eliminarReserva(reservaId) {
 }
 
 function mostrarFormularioModificar(reserva) {
-  const modifyForm = document.getElementById('modifyForm');
+  const modifyForm = document.getElementById("modifyForm");
   modifyForm.fecha.value = reserva.fecha;
   modifyForm.hora.value = reserva.hora;
 
-  const modifyModal = new bootstrap.Modal(document.getElementById('modifyModal'));
+  const modifyModal = new bootstrap.Modal(
+    document.getElementById("modifyModal")
+  );
   modifyModal.show();
 
   const transaccion = db.transaction(["Reservas"], "readonly");
   const objectStore = transaccion.objectStore("Reservas");
-  
-  let solicitudReserva = objectStore.get(reserva.id)
 
-
+  let solicitudReserva = objectStore.get(reserva.id);
 
   solicitudReserva.onsuccess = () => {
-    const sendEdit = document.getElementById('sendEdit');
-    sendEdit.addEventListener('click', () => {
+    const sendEdit = document.getElementById("sendEdit");
+    sendEdit.addEventListener("click", () => {
       let data = {
         id: reserva.id,
         centro: reserva.centro,
         user: reserva.user,
         hora: modifyForm.hora.value,
         fecha: modifyForm.fecha.value,
-      }
+      };
       const transaccion = db.transaction(["Reservas"], "readwrite");
-      const objectStore = transaccion.objectStore("Reservas");    
-      objectStore.put(data)
-    })
-  }
+      const objectStore = transaccion.objectStore("Reservas");
+      objectStore.put(data);
+    });
+  };
 
   solicitudReserva.onerror = () => {
-    console.log('error');
-  }
+    console.log("error");
+  };
 }
 
 function addEventListeners() {
@@ -93,39 +95,65 @@ function addEventListeners() {
   }
 
   if (byNameButton) {
-    byNameButton.addEventListener("click", verReservasPorNombre);
+    byNameButton.addEventListener("click", () => {
+      if (userJSON) {
+        window.location.href = './perfil.html' 
+        verReservasPorNombre();
+      }
+      else {
+        let errorReserva = document.getElementById("errorReserva");
+        errorReserva.innerText = "Para realizar esta acción debes iniciar sesión.";
+        errorReserva.style.display = "block";      }
+    });
   }
 }
-
 
 function añadirReserva() {
   const transaccion = db.transaction(["Reservas"], "readwrite");
   const objectStore = transaccion.objectStore("Reservas");
   usuarioLog = localStorage.getItem("userLog");
   userJSON = JSON.parse(usuarioLog);
-  const nuevaReserva = {
-    centro: {
-      name: centro.value,
-      lat: centro.options[centro.selectedIndex].getAttribute("data-latitud"),
-      lon: centro.options[centro.selectedIndex].getAttribute("data-longitud"),
-    },
-    hora: hora.value,
-    fecha: date.value,
-    user: userJSON[0].name,
-  };
+  if (userJSON, date.value) {
+    const nuevaReserva = {
+      centro: {
+        name: centro.value,
+        lat: centro.options[centro.selectedIndex].getAttribute("data-latitud"),
+        lon: centro.options[centro.selectedIndex].getAttribute("data-longitud"),
+      },
+      hora: hora.value,
+      fecha: date.value,
+      user: userJSON[0].name,
+    };
 
-  const solicitud = objectStore.add(nuevaReserva);
+    const solicitud = objectStore.add(nuevaReserva);
+    solicitud.onsuccess = () => {
+      console.log("Reserva añadida correctamente");
+      let successReserva = document.getElementById("successReserva");
+      successReserva.innerText = "Reserva añadida correctamente.";
+      successReserva.style.display = "block";
+    };
 
-  solicitud.onsuccess = () => {
-    console.log("Reserva añadida correctamente");
-    let successReserva = document.getElementById('successReserva');
-    successReserva.innerText = 'Reserva añadida correctamente.'
-    successReserva.style.display = 'block';
-  };
+    solicitud.onerror = () => {
+      console.error("Error al añadir la reserva");
+    };
+  }
 
-  solicitud.onerror = () => {
-    console.error("Error al añadir la reserva");
-  };
+  else {
+    if (!userJSON) {
+      let errorReserva = document.getElementById("errorReserva");
+      errorReserva.innerText = "Para realizar esta acción debes iniciar sesión.";
+      errorReserva.style.display = "block";
+  
+    }
+
+    else {
+      let errorReserva = document.getElementById("errorReserva");
+      errorReserva.innerText = "Debes introducir una fecha.";
+      errorReserva.style.display = "block";
+
+    }
+
+  }
 }
 
 function verTodasLasReservas() {
@@ -145,20 +173,17 @@ function verTodasLasReservas() {
 function verReservasPorNombre() {
   const transaccion = db.transaction(["Reservas"], "readwrite");
   const objectStore = transaccion.objectStore("Reservas");
-  const getAllRequest = objectStore.index('userIndex').getAll();
+  const getAllRequest = objectStore.index("userIndex").getAll();
 
   getAllRequest.onsuccess = (ev) => {
     mostrarReservas(ev.target.result);
   };
 }
 
-
 function mostrarReservas(reservas) {
-
   const tablaReservas = document.getElementById("tablaReservas");
   if (tablaReservas) {
     tablaReservas.innerHTML = "";
-
   }
 
   reservas.forEach((reserva) => {
@@ -200,18 +225,18 @@ function mostrarReservas(reservas) {
         </button>
       </td>`;
 
-      if (tablaReservas) {
-        tablaReservas.appendChild(fila);
-      }
+    if (tablaReservas) {
+      tablaReservas.appendChild(fila);
+    }
 
-      const deleteButton = fila.querySelector("#deleteButton");
-      const modifyButton = fila.querySelector("#modifyButton");
+    const deleteButton = fila.querySelector("#deleteButton");
+    const modifyButton = fila.querySelector("#modifyButton");
 
-      deleteButton.addEventListener("click", () => eliminarReserva(reserva.id));
-      modifyButton.addEventListener("click", () => mostrarFormularioModificar(reserva));
-
-});
+    deleteButton.addEventListener("click", () => eliminarReserva(reserva.id));
+    modifyButton.addEventListener("click", () =>
+      mostrarFormularioModificar(reserva)
+    );
+  });
 }
-
 
 document.addEventListener("DOMContentLoaded", initDB);
