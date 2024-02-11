@@ -32,7 +32,59 @@ function initDB() {
     .forEach((tooltipTriggerEl) => {
       new bootstrap.Tooltip(tooltipTriggerEl);
     });
+
+
+    const buscarboton = document.getElementById("buscarBtn")
+    if(buscarboton){
+      buscarboton.addEventListener("click", function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+      
+        var centro = document.getElementById("input1").value;
+        var fecha = document.getElementById("input2").value;
+        var hora = document.getElementById("input3").value;
+      
+        verificarDisponibilidad(centro, fecha, hora);
+      });
+    }
+   
 }
+
+
+function verificarDisponibilidad(centro, fecha, hora) {
+  const transaction = db.transaction(["Reservas"], "readonly");
+  const objectStore = transaction.objectStore("Reservas");
+  const index = objectStore.index("userIndex");
+
+  const singleKey = IDBKeyRange.only(centro);
+
+  const request = index.openCursor(singleKey);
+
+  request.onerror = function(event) {
+      console.error("Error al verificar la disponibilidad:", event.target.errorCode);
+  };
+
+  request.onsuccess = function(event) {
+      const cursor = event.target.result;
+      let isAvailable = true;
+      if (cursor) {
+          const reserva = cursor.value;
+          alert(reserva)
+          if (reserva.fecha === fecha && reserva.hora === hora) {
+              isAvailable = false;
+          }
+          cursor.continue();
+      }
+      if (isAvailable) {
+          alert("¡Horario disponible para reserva!");
+      } else {
+          alert("Lo siento, este horario ya está reservado en ese centro para esa fecha y hora." +
+              "\nCentro: " + reserva.centro +
+              "\nFecha: " + reserva.fecha +
+              "\nHora: " + reserva.hora);
+      }
+  };
+}
+
 
 function eliminarReserva(reservaId) {
   const transaccion = db.transaction(["Reservas"], "readwrite");
@@ -238,5 +290,6 @@ function mostrarReservas(reservas) {
     );
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", initDB);

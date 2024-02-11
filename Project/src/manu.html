@@ -64,9 +64,15 @@
     }
 
     .titulos{
-        margin-top: 100px;
+        margin-top: 50px;
         margin-bottom: 50px;
         margin-left: 120px;
+        text-align: left; 
+        text-align: left; 
+        font-family: Arial; 
+        font-size: 30px; 
+        color: #000000; 
+        text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 4px 1px rgba(0,0,0,0.1), 0 0 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
     }
 
     .navbar-nav .nav-item:hover .nav-link {
@@ -258,10 +264,7 @@
                 </ul>
             </div>
         </div>
-        <script>
 
-        </script>
-        <!--NO PUTO TOQUES HASTA AQUÍ-->
     </header>
     <div class="fondo align-items-center justify-content-center">
         <div class="container text-center py-5">
@@ -299,7 +302,7 @@
 
                 <div class="col-md-12 text-center mt-3">
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary">Buscar</button>
+                        <button id="buscarBtn" class="btn btn-primary">Buscar</button>
                     </div>
                 </div>
             </form>
@@ -312,7 +315,7 @@
 
     <!-- Tarjetas -->
 
-    <h2 class="titulos d-flex color-primary position-relative">Estos son los centros de padel cercanos !!</h2>
+    <h2 class="titulos d-flex color-primary position-relative">Saca las ganas que tienes de jugar y reserva una de nuestras pistas ya !!</h2>
     <div class="card-group d-flex justify-content-around mt-5 h-100">
         <div class="col-sm-3 h-100">
             <div class="card text-white bg-dark shadow-lg">
@@ -322,7 +325,7 @@
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Calle Cuba nº7, 07006</p>
-                    <button class="btn btn-outline-secondary text-secondary">Reservar</button>
+                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
                 </div>
             </div>
         </div>
@@ -334,7 +337,7 @@
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Carrer George Sand 4, 07007</p>
-                    <button class="btn btn-outline-secondary text-secondary">Reservar</button>
+                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
                 </div>
             </div>
         </div>
@@ -346,7 +349,7 @@
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Carrer de Castellà la Manxa 6, 07011</p>
-                    <button class="btn bg-secondary text-white">Reservar</button>
+                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
                 </div>
             </div>
         </div>
@@ -354,15 +357,15 @@
 
 
     <h2 class="titulos d-flex color-primary position-relative">
-        Un poco de nuestra nueva tienda online
-        <span class="badge badge-primary badge-globo bg-primary">NEW!!</span>
+        Disfruta al maximo tus partidos con nuestra nueva gama de palas 
+        <span class="badge badge-secondary badge-globo bg-success text-black">NEW!!</span>
     </h2>
 
     <!-- Imagenes Carusel -->
 
-    <div class="carousel slide color-primary mt-5 position-relative bg-primary" data-bs-ride="carousel">
+    <div id="tiendaCarrusel" class="carousel slide color-primary mt-5 position-relative bg-primary" data-bs-ride="carousel">
         <div class="carousel-inner">
-    
+        
             <div class="carousel-item active mt-5">
                 <div class="d-flex justify-content-center align-items-center">
                     <img src="pala1.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 1">
@@ -395,17 +398,10 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-        <a class="carousel-control-prev"  role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-          </a>
-          <a class="carousel-control-next"  role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </a>
     
+        </div>
     </div>
+    
 
 </body>
 

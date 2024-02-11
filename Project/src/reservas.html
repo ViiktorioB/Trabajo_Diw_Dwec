@@ -106,6 +106,10 @@
         width: 60%;
     }
 
+    #cielo{
+        background: url('./cielofondo2.jpeg') no-repeat center;
+        background-size: cover;
+    }
 
 
     .divMapa {
@@ -288,11 +292,11 @@
         </div>
     </header>
 
-    <div class="container">
+    <div id="cielo" class="container-fluid py-3">
         <div class="row">
-            <div class="texto col-10 mr-5">
-                <h2 class="titulosReservas d-flex color-primary">Buscate un momento para jugar y reserva con cualquier persona a cualquier hora</h2>
-                <h4 class="titulosReservas2 d-flex color-primary">Nuestras instalaciones disponibles</h4>
+            <div class="texto col-9 mr-5">
+                <h2 class="titulosReservas d-flex color-primary bg-secondary text-white bg-opacity-50 p-2">Buscate un buen momento para jugar y reserva enseguida sin dudar</h2>
+                <h4 class="titulosReservas2 d-flex color-primary text-white">Reserva ya en tu centro mas cercano</h4>
             </div>
     
             <div class="tiempo col-2 bg-success d-flex flex-column justify-content-center rounded text-white mt-5 ml-5 shadow-lg py-2">
@@ -320,9 +324,9 @@
         <div class="mb-3 col">
             <label for="centro" class="form-label">Centro</label>
             <select class="form-select py-3" id="centro">
-                <option value="duet" data-latitud="39.562722" data-longitud="2.674083">Duet Sports Portitxol</option>
-                <option value="palmapadel" data-latitud="39.585667" data-longitud="2.620639">Palma Padel</option>
-                <option value="palmafactory" data-latitud="39.571556" data-longitud="2.680361">Palma Factory</option>
+                <option value="Duet Sports Portitxol" data-latitud="39.562722" data-longitud="2.674083">Duet Sports Portitxol</option>
+                <option value="Palma Padel" data-latitud="39.585667" data-longitud="2.620639">Palma Padel</option>
+                <option value="Padel factory" data-latitud="39.571556" data-longitud="2.680361">Palma Factory</option>
             </select>
         </div>
 

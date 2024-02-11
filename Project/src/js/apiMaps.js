@@ -78,9 +78,9 @@ function initMap() {
 
         // Marcadores de ubicaciones actuales
         new google.maps.Marker({
-          position: { lat: ubicaciones[i].lat, lng: ubicaciones[i].lon },
+          position: { lat: ubicaciones[0].lat, lng: ubicaciones[0].lon },
           map,
-          title: "Ubicación " + (i + 1),
+          title: "Ubicación ",
           label: label1,
         });
 
@@ -101,8 +101,8 @@ function initMap() {
           fillColor: "yellow",
           fillOpacity: 0.15,
           map,
-          center: { lat: ubicaciones[i].lat, lng: ubicaciones[i].lon },
-          radius: ubicaciones[i].acu,
+          center: { lat: ubicaciones[0].lat, lng: ubicaciones[0].lon },
+          radius: ubicaciones[0].acu,
         });
       } catch (error) {
         console.error("Error fetching or processing data:", error);
