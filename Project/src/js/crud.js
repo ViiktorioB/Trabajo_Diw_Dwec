@@ -183,6 +183,7 @@ function añadirReserva() {
       let successReserva = document.getElementById("successReserva");
       successReserva.innerText = "Reserva añadida correctamente.";
       successReserva.style.display = "block";
+      errorReserva.style.display = 'none';
     };
 
     solicitud.onerror = () => {
@@ -240,6 +241,34 @@ function mostrarReservas(reservas) {
 
   reservas.forEach((reserva) => {
     const fila = document.createElement("tr");
+    fila.setAttribute('draggable', true)
+    fila.classList.add('fila');
+    fila.addEventListener('dragstart', drag);
+    fila.addEventListener('dragover', allowDrop);
+    fila.addEventListener('drop', drop);
+    function drag(e) {
+      e.target.classList.add('dragging');
+      e.dataTransfer.setData('text',e.target.id);
+    }
+    
+    function allowDrop(e) {
+      e.preventDefault();
+    }
+    
+    function drop(e) {
+      e.preventDefault();
+      const draggingElement = document.querySelector('.dragging');
+      const dropTarget = e.target.closest('.fila');
+    
+      if (draggingElement && dropTarget && draggingElement !== dropTarget) {
+        const parent = dropTarget.parentNode;
+        const nextSibling = dropTarget.nextSibling === draggingElement ? dropTarget : dropTarget.nextSibling;
+        parent.insertBefore(draggingElement, nextSibling);
+      }
+
+    
+      document.querySelectorAll('.fila').forEach((fila) => fila.classList.remove('dragging'));
+    }  
     fila.innerHTML = `
       <td class="align-middle">${reserva.fecha}</td>
       <td class="align-middle">${reserva.hora}</td>
@@ -280,7 +309,6 @@ function mostrarReservas(reservas) {
     if (tablaReservas) {
       tablaReservas.appendChild(fila);
     }
-
     const deleteButton = fila.querySelector("#deleteButton");
     const modifyButton = fila.querySelector("#modifyButton");
 
