@@ -81,9 +81,13 @@ function verificarDisponibilidad(centro, fecha, hora) {
         }
       });
       if (isAvailable) {
-          alert("¡Horario disponible para reserva!");
+        let successBuscar = document.getElementById("successBuscar");
+        successBuscar.innerText = "Esta reserva esta disponible";
+        successBuscar.style.display = "block";
       } else {
-        alert('No dispo')
+        let errorBuscar = document.getElementById("errorBuscar");
+        errorBuscar.innerText = "Esta reserva no esta disponible";
+        errorBuscar.style.display = "block";
       }
   };
 }
@@ -277,7 +281,7 @@ function mostrarReservas(reservas) {
       <td class="align-middle">${reserva.hora}</td>
       <td class="align-middle">${reserva.centro.name}</td>
       <td class="align-middle">
-        <button id="modifyButton" type="button" class="btn btn-info btn-sm" data-bs-toggle="modifyModal" data-bs-target="#modifyModal" data-toggle="tooltip" data-placement="top" title="Editar Reserva">
+        <button id="modifyButton" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modifyModal" data-bs-target="#modifyModal" data-toggle="tooltip" data-placement="top" title="Editar Reserva">
           <i class="bi bi-pencil-fill"></i>
         </button>
 <div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="modifyModalLabel" aria-hidden="true">
