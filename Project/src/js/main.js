@@ -4,6 +4,9 @@ import "../bootstrap-5.3.2/scss/bootstrap-utilities.scss";
 import "../bootstrap-5.3.2/scss/bootstrap-reboot.scss";
 import "../js/profile.js";
 import "../js/crud.js";
+import "../js/apiMaps.js"
+import "../js/apiTiempo.js"
+
 
 
 // Definición de variables

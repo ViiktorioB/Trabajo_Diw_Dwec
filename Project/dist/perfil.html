@@ -37,7 +37,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<script defer src="main.js"></script><script defer src="profile.js"></script><script defer src="apiMaps.js"></script><script defer src="apiTiempo.js"></script></head>
+<script defer src="main.js"></script></head>
 
 
 <style>
@@ -58,7 +58,7 @@
     }
 
     .fondo {
-        background: url('./wp4283319.jpg') no-repeat center;
+        background: url('./assets/wp4283319.jpg') no-repeat center;
         background-size: cover;
         min-height: 70vh;
     }
@@ -96,7 +96,7 @@
     <header class="header col-sm-12 bg-white">
         <div class="container d-flex justify-content-end align-items-center">
             <div class="container d-flex col-sm-7 justify-content-start">
-                <img src="./logoprueba.png" alt="logo" class="logo">
+                <img src="./assets/logoprueba.png" alt="logo" class="logo">
             </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -126,7 +126,6 @@
                         </ul>
                     </div>
             </nav>
-            <!--NO PUTO TOQUES-->
             <div class="iniciosession d-flex align-items-center">
                 <a id="loginBoton" href="login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary"
                     data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión
@@ -252,7 +251,7 @@
             <div class="col-md-4 mx-auto rounded">
                 <!-- Perfil -->
                 <div class="card">
-                    <img id="imgPerfil" src="profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
+                    <img id="imgPerfil" src="./assets/profile.png" class="card-img-top mx-auto" alt="Foto de perfil">
                     <div class="card-body">
                         <h5 class="card-title">Nombre</h5>
                         <p class="card-text" id="nombrePerfil"></p>
@@ -275,7 +274,7 @@
 
             <!-- Reservas tabla -->
             <div class="col-md-8">
-                <h2 class="mb-4">Tus reservas</h2>
+                <h2 class="mb-4 bg-info w-25 p-2 rounded">Tus reservas</h2>
                 <table class="table table-striped">
                     <thead>
                         <tr>

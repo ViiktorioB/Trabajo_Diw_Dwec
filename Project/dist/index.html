@@ -57,7 +57,7 @@
     }
 
     .fondo {
-        background: url('./wp4283319.jpg') no-repeat center;
+        background: url('./assets/wp4283319.jpg') no-repeat center;
         background-size: cover;
         min-height: 70vh;
 
@@ -117,7 +117,7 @@
 <header class="header col-sm-12 bg-white">
     <div class="container d-flex justify-content-end align-items-center">
         <div class="container d-flex col-sm-7 justify-content-start">
-                <img src="./logoprueba.png" alt="logo" class="logo">
+                <img src="./assets/logoprueba.png" alt="logo" class="logo">
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -147,7 +147,6 @@
                     </ul>
                 </div>
         </nav>
-            <!--NO PUTO TOQUES-->
             <div class="iniciosession d-flex align-items-center">
                 <a id="loginBoton" href="login.html" class="btn btn-light mr-10 fs-6 col-sm-7 border border-primary"
                     data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión
@@ -298,6 +297,8 @@
                     <div class="d-grid gap-2">
                         <button id="buscarBtn" class="btn btn-primary">Buscar</button>
                     </div>
+                    <div id="successBuscar" class="alert alert-warning py-2 m-1 w-100" role="alert" style="display: none;"> </div>
+                    <div id="errorBuscar" class="alert alert-danger py-2 m-1 w-100" role="alert" style="display: none;"></div>
                 </div>
             </form>
         </div>
@@ -309,41 +310,41 @@
 
     <!-- Tarjetas -->
 
-    <h2 class="titulos d-flex color-primary position-relative">Estos son los centros de padel cercanos !!</h2>
+    <h2 class="titulos d-flex color-primary bg-success w-75 p-2 rounded">Saca las ganas que tienes de jugar y reserva una de nuestras pistas ya !!</h2>
     <div class="card-group d-flex justify-content-around mt-5 h-100">
         <div class="col-sm-3 h-100">
             <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista2.jpeg" class="card-img-top opacity-75" alt="">
+                <img src="./assets/pista2.jpeg" class="card-img-top opacity-75" alt="">
                 <div class="card-img-overlay text-white">
                     <h3>Duet Pádel Portixol</h3>
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Calle Cuba nº7, 07006</p>
-                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
+                    <button class="btn btn-outline-warning text-warning">Disponible</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 h-100">
             <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista1.jpeg" class="card-img-top" alt="">
+                <img src="./assets/pista1.jpeg" class="card-img-top" alt="">
                 <div class="card-img-overlay text-white">
                     <h3>Padel Club Mallorca</h3>
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Carrer George Sand 4, 07007</p>
-                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
+                    <button class="btn btn-outline-warning text-warning">Disponible</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 h-100">
             <div class="card text-white bg-dark shadow-lg">
-                <img src="./pista3.jpeg" class="card-img-top" alt="">
+                <img src="./assets/pista3.jpeg" class="card-img-top" alt="">
                 <div class="card-img-overlay text-white">
                     <h3>Palma Padel</h3>
                 </div>
                 <div class="card-body shadow-lg">
                     <p class="card-text mt-2">Carrer de Castellà la Manxa 6, 07011</p>
-                    <button class="btn btn-outline-secondary text-secondary">Disponible</button>
+                    <button class="btn btn-outline-warning text-warning">Disponible</button>
                 </div>
             </div>
         </div>
@@ -352,7 +353,7 @@
 
     <h2 class="titulos d-flex color-primary position-relative">
         Disfruta al maximo tus partidos con nuestra nueva gama de palas 
-        <span class="badge badge-secondary badge-globo bg-secondary">NEW!!</span>
+        <span class="badge badge-secondary badge-globo bg-success text-black">NEW!!</span>
     </h2>
 
     <!-- Imagenes Carusel -->
@@ -362,33 +363,33 @@
         
             <div class="carousel-item active mt-5">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala1.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 1">
+                    <img src="./assets/pala1.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 1">
                     <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
                         <h3 class="caruselText py-2">Odin Pro Black</h3>
                         <p class="caruselText overflow-wrap">Pala de pádel de alta calidad fabricada de manera artesanal en Barcelona. Confeccionada con Fibra de Carbono 3K integral HEXCEL y fibra de vidrio de doble capa y doble espesor, con tubular y core en 100% CARBONO KEVLAR. </p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
+                        <button class="btn bg-success text-white mb-5 mt-5">Comprar</button>
                     </div>
                 </div>
             </div>
     
             <div class="carousel-item mt-5">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala2.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 2">
+                    <img src="./assets/pala2.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 2">
                     <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
                         <h3 class="caruselText py-2 ">Nox MX 10</h3>
                         <p class="caruselText overflow-wrap">Disfruta de la resistencia gracia a su composición de carbono en toda la estructura. Su forma diamante maximizará tu potencia en cada golpe. Hecha con una combinación de materiales en carbono y fibras de vidrio que destacan por proporcionar mayor resistencia.</p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
+                        <button class="btn bg-success text-white mb-5 mt-5">Comprar</button>
                     </div>
                 </div>
             </div>
     
             <div class="carousel-item mt-5">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="pala3.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 3">
+                    <img src="./assets/pala3.jpeg" class="imgCarusel d-block border-top border-bottom border-start border-secondary rounded-start" alt="Imagen 3">
                     <div class="textofoto d-flex flex-column justify-content-center bg-white p-3 w-25 border-top border-bottom border-rigth border-secondary rounded-end">
                         <h3 class="caruselText py-2">BullPadel Pro Carbon 16K</h3>
                         <p class="caruselText overflow-wrap">Pala Bullpadel Neuron 2024, forma híbrida y balance bajo, es el modelo que empuñará Fede Chingotto para la nueva temporada. Aporta polivalencia durante el juego. Planos de Xtend Carbon 12K y núcleo de goma Multieva. Perfecta para juadores profesionales</p>
-                        <button class="btn bg-secondary text-white mb-5 mt-5">Comprar</button>
+                        <button class="btn bg-success text-white mb-5 mt-5">Comprar</button>
                     </div>
                 </div>
             </div>
